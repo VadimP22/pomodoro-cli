@@ -1,6 +1,7 @@
 //imports
 import {redBright, whiteBright} from "cli-color";
 import TextComponent, {Alignment} from "./text_component";
+import HorizontalSelector from "./horizontal_selector";
 
 
 //app class
@@ -14,8 +15,8 @@ class App
     {
         console.clear()
         console.log(redBright("hellofffffrightpart"))
-        let text = new TextComponent(4, 4,"ghtpart", 10, whiteBright, "center")
-        text.draw()
+        let selector = new HorizontalSelector(2, 2, 1)
+        selector.draw()
     }
 }
 

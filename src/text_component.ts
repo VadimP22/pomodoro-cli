@@ -25,7 +25,7 @@ export default class TextComponent extends Component
         this.alignment = alignment
     }
 
-    draw() {
+    public draw() {
         if (this.alignment == "left")
         {
             this.drawLeftAligned()
@@ -33,6 +33,10 @@ export default class TextComponent extends Component
         else if (this.alignment == "right")
         {
             this.drawRightAligned()
+        }
+        else if(this.alignment == "center")
+        {
+            this.drawCenterAligned()
         }
     }
 
@@ -67,9 +71,14 @@ export default class TextComponent extends Component
         }
     }
 
-    drawCenteAligned()
+    drawCenterAligned()
     {
         throw Error("Work in progress")
+    }
+
+    public setNewColor(color: Format)
+    {
+        this.color = color
     }
 
 }
