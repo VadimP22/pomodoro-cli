@@ -1,0 +1,12 @@
+{
+  "name": "tests",
+  "version": "0.0.1",
+  "description": "",
+  "main": "test_connection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test_connection": "tsc -p ./tsconfig.json && node test_connection.js"
+  },
+  "author": "Vadim Petrov (coolstudiorus@gmail.com)",
+  "license": "ISC"
+}

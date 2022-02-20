@@ -1,6 +1,6 @@
 import Component from "./component";
 import {cursorTo} from "readline";
-import {redBright, whiteBright} from "cli-color";
+import {whiteBright} from "cli-color";
 import {Format} from "cli-color/bare";
 
 export type Alignment = "left" | "right" | "center"
