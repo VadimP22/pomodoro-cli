@@ -7,8 +7,6 @@ export type Alignment = "left" | "right" | "center"
 
 export default class TextComponent extends Component
 {
-    private x: number
-    private y: number
     private width: number
     private color: Format
     private text: string
@@ -79,6 +77,15 @@ export default class TextComponent extends Component
     public setNewColor(color: Format)
     {
         this.color = color
+    }
+
+    public setNewText(text: string)
+    {
+        this.text = text
+    }
+
+    public getRealWidth(): number {
+        return this.width
     }
 
 }

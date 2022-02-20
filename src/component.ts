@@ -1,6 +1,8 @@
 export default class Component
 {
     private _isActive: boolean = false
+    protected x: number = 0
+    protected y: number = 0
 
     public setActive(newValue: boolean = true)
     {
@@ -15,6 +17,22 @@ export default class Component
     public getRealWidth(): number
     {
         throw new Error("must be orverrided")
+    }
+
+    public setNewPosition(x: number, y: number)
+    {
+        this.x = x
+        this.y = y
+    }
+
+    public getX()
+    {
+        return this.x
+    }
+
+    public getY()
+    {
+        return this.y
     }
 
     public draw()

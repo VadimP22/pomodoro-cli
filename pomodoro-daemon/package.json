@@ -1,0 +1,12 @@
+{
+  "name": "pomodoro-daemon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "daemon.js",
+  "scripts": {
+    "start": "tsc -p ./src/tsconfig.json && node src/daemon.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vadim Petrov (coolstudiorus@gmail.com)",
+  "license": "ISC"
+}
