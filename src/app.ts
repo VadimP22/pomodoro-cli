@@ -13,9 +13,8 @@ class App
 
     run(): void
     {
-        console.clear()
-        console.log(redBright("hellofffffrightpart"))
         let selector = new HorizontalSelector(2, 2, 1)
+        console.clear()
         selector.draw()
     }
 }
