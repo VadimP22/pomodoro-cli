@@ -1,35 +1,58 @@
-import {blueBright, redBright} from "cli-color";
+import {blueBright, greenBright} from "cli-color";
 import {Server, Socket} from "net";
-import * as buffer from "buffer";
+import processRecievedObject from "./process_recieved_object";
+
 
 let server = new Server()
+let host = "127.0.0.1"
+let port = 8099
 
-server.listen(8099,"127.0.0.1", notify)
+
+server.listen(port, host, notify)
 server.on("connection", onConnection)
+
 
 function notify()
 {
-    console.log(blueBright("Сервер запущен"))
+    console.log(blueBright("Server listening on port " + port + ", host " + host))
 }
+
 
 function onConnection(socket: Socket)
 {
-    console.log(blueBright("Соединение установлено"))
+    console.log(blueBright("Connection Established"))
     socket.on("error", onSocketError)
     socket.on("data", onSocketData)
+    socket.on("close", onSocketClose)
 }
+
 
 function onSocketError()
 {
-    console.log(redBright("Ошибка"))
+    console.log(greenBright("Socket error"))
 }
+
 
 function onSocketClose()
 {
-    console.log(redBright("Сокет закрыт"))
+    console.log(greenBright("Socket closed"))
 }
+
 
 function onSocketData(data: string)
 {
-    console.log(redBright("Пришли данные:", data))
+    let parsedObject: any
+
+    console.log(greenBright("Data recieved:", data))
+    try
+    {
+        parsedObject= JSON.parse(data)
+        console.log(greenBright("Data successfully parsed"))
+        processRecievedObject(parsedObject)
+    }
+    catch (e: any)
+    {
+        console.log(greenBright("Error:"), greenBright(e.toString()))
+    }
+
 }

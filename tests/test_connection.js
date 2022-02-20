@@ -5,7 +5,7 @@ let socket = (0, net_1.createConnection)(8099, "127.0.0.1");
 socket.on("connect", onConnect);
 socket.on("error", onError);
 function onConnect() {
-    socket.write("This is the test message. 1234567890");
+    socket.write('{"function": "notifyNow", "arguments": ["My notification", "Hello :)"]}');
     socket.end();
 }
 function onError(err) {

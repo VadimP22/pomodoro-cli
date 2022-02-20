@@ -7,7 +7,7 @@ socket.on("error", onError)
 
 function onConnect()
 {
-    socket.write("This is the test message. 1234567890")
+    socket.write('{"function": "notifyNow", "arguments": ["My notification", "Hello :)"]}')
     socket.end()
 }
 
